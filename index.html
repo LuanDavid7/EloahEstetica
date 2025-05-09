@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra Sua Pele: Guia Essencial de Cuidados</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            color: #4a4a4a;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .flyer-container {
+            background: linear-gradient(to bottom, #f8e1eb 0%, #f8f9fa 100%);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #d45d87;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #5d9d88;
+            border-bottom: 2px solid #f0d3e0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .skin-type {
+            background-color: rgba(246, 229, 236, 0.7);
+            border-left: 3px solid #d45d87;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .product-recommendation {
+            background-color: rgba(232, 245, 240, 0.7);
+            border-left: 3px solid #5d9d88;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .massage-step {
+            background-color: rgba(255, 248, 240, 0.7);
+            border-left: 3px solid #e9a668;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 0 4px 4px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .massage-step span {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            background-color: #e9a668;
+            color: white;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+            padding: 15px;
+        }
+        
+        .highlight {
+            color: #d45d87;
+            font-weight: 500;
+        }
+
+        .main-image-container {
+            position: relative;
+            max-height: 400px;
+            overflow: hidden;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            opacity: 0.25;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+        }
+
+        .logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            color: #d45d87;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin: 0;
+        }
+
+        .section-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .export-btn {
+            background-color: #d45d87;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 15px auto;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 20px;
+            }
+            
+            .logo-text {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flyer-container pb-4">
+            <!-- Header com imagem principal com transparência e logo sobreposta -->
+            <div class="main-image-container">
+                <img src="https://img.freepik.com/fotos-gratis/beleza-de-cuidados-com-a-pele-menina-natural-com-pele-saudavel-e-brilhante-tocando-o-rosto-hidratado-e-sorrindo-com-os-olhos-fechados-mulher-desfrutando-de-uma-sensacao-de-frescura-e-limpeza-depois-de-cosmeticos-parede-branca_176420-34261.jpg" alt="Mulher com pele saudável" class="main-image">
+                <div class="logo-overlay">
+                    <h1 class="logo-text">Eloáh Estética</h1>
+                </div>
+            </div>
+            
+            <div class="px-4 py-4">
+                <h1 class="text-3xl font-bold text-center mb-2">Descubra Sua Pele</h1>
+                <p class="text-center text-lg mb-6">Guia Essencial de Cuidados Diários</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Seção 1: Descubra o Seu Tipo de Pele -->
+                    <div class="section">
+                        <h2 class="text-xl font-semibold">Descubra o Seu Tipo de Pele</h2>
+                        
+                        <div class="skin-type">
+                            <p class="font-medium">Pele Seca</p>
+                            <p>Sensação de repuxamento, descamação, aspereza e pouca elasticidade. Faça o teste: após a limpeza, a pele fica repuxada e desconfortável.</p>
+                        </div>
+                        
+                        <div class="skin-type">
+                            <p class="font-medium">Pele Normal</p>
+                            <p>Equilibrada, macia, sem brilho excessivo ou ressecamento. Faça o teste: 2-3 horas após a limpeza, a pele mantém-se confortável, sem oleosidade ou repuxamento.</p>
+                        </div>
+                        
+                        <div class="skin-type">
+                            <p class="font-medium">Pele Oleosa</p>
+                            <p>Brilho excessivo, poros dilatados, tendência a acne. Faça o teste: 2 horas após a limpeza, note a oleosidade especialmente na "zona T" (testa, nariz e queixo).</p>
+                        </div>
+                        
+                        <div class="skin-type">
+                            <p class="font-medium">Pele Mista</p>
+                            <p>Combinação de áreas oleosas (zona T) e secas (bochechas). Faça o teste: após a limpeza, observe oleosidade apenas em algumas áreas do rosto.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Seção 2: Escolha os Produtos Certos -->
+                    <div class="section">
+                        <h2 class="text-xl font-semibold">Escolha os Produtos Certos</h2>
+                        
+                        <img src="https://d1xe7tfg0uwul9.cloudfront.net/sbd-portal-2024/wp-content/uploads/2021/10/palestrante.png.webp" alt="Classificação dos fototipos de pele" class="section-image">
+                        
+                        <div class="product-recommendation">
+                            <p class="font-medium">Para Pele Seca</p>
+                            <p>Busque produtos com <span class="highlight">ácido hialurônico</span>, <span class="highlight">ceramidas</span>, <span class="highlight">glicerina</span> e <span class="highlight">óleos naturais</span>. Prefira limpadores cremosos e hidratantes densos que formem barreira protetora.</p>
+                        </div>
+                        
+                        <div class="product-recommendation">
+                            <p class="font-medium">Para Pele Normal</p>
+                            <p>Produtos balanceados com <span class="highlight">antioxidantes</span>, <span class="highlight">vitamina C</span> e <span class="highlight">peptídeos</span>. Hidratantes leves a médios e limpadores suaves são ideais para manter o equilíbrio.</p>
+                        </div>
+                        
+                        <div class="product-recommendation">
+                            <p class="font-medium">Para Pele Oleosa</p>
+                            <p>Procure produtos com <span class="highlight">ácido salicílico</span>, <span class="highlight">niacinamida</span> e <span class="highlight">argilas</span>. Prefira hidratantes em gel ou sérum com especificações <span class="highlight">oil-free</span> e limpadores que controlam oleosidade.</p>
+                        </div>
+                        
+                        <div class="product-recommendation">
+                            <p class="font-medium">Para Pele Mista</p>
+                            <p>Combine produtos ou use específicos para pele mista com <span class="highlight">ácido glicólico</span> e <span class="highlight">extratos calmantes</span>. Hidratantes leves nas áreas oleosas e mais intensos nas áreas secas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Seção 3: Massagem Facial de 5-10 minutos -->
+                <div class="section">
+                    <h2 class="text-xl font-semibold">Massagem Facial de 5-10 minutos</h2>
+                    
+                    <img src="https://www.idermo.com/media/zoo/images/Automasaje-facialpp_d9de8d2c38c626678f5646a5e45b7c67.jpg" alt="Massagem facial" class="section-image">
+                    
+                    <div class="massage-step">
+                        <span>1</span>
+                        <p>Aplique um óleo ou sérum facial e aqueça as mãos esfregando-as rapidamente.</p>
+                    </div>
+                    
+                    <div class="massage-step">
+                        <span>2</span>
+                        <p>Comece pelo queixo e maxilar: com os dedos, faça movimentos suaves para cima e para fora.</p>
+                    </div>
+                    
+                    <div class="massage-step">
+                        <span>3</span>
+                        <p>Maçãs do rosto: use movimentos circulares ascendentes do centro para as têmporas.</p>
+                    </div>
+                    
+                    <div class="massage-step">
+                        <span>4</span>
+                        <p>Testa: deslize os dedos do centro para as laterais, depois faça movimentos circulares nas têmporas.</p>
+                    </div>
+                    
+                    <div class="massage-step">
+                        <span>5</span>
+                        <p>Contorno dos olhos: toque suavemente com os dedos anelares, movendo-se do canto interno para o externo.</p>
+                    </div>
+                    
+                    <div class="massage-step">
+                        <span>6</span>
+                        <p>Finalize pressionando pontos de drenagem próximos às orelhas por 5 segundos cada.</p>
+                    </div>
+                    
+                    <p class="text-center mt-4">Realize esta massagem por 5-10 minutos diariamente, repita cada sequência de movimentos por um número de vezes igual a sua idade.</p>
+                  
+                    <p class="text-center mt-2">Fazendo isso todos os dias ocorrerá melhora da circulação, redução do inchaço e com isso uma pele mais firme e sempre radiante.</p>
+                </div>
+                
+                <!-- Footer com contato e localização -->
+                <div class="footer">
+                    <p class="text-sm">Compartilhe este guia com suas amigas!</p>
+                    <p class="text-lg font-medium mt-2">Eloáh Estética</p>
+                    <p class="text-sm">📞 (19) 991 926 179</p>
+                    <p class="mt-4">
+                        <a href="https://wa.me/5519991926179" class="whatsapp-btn">Agende pelo WhatsApp</a>
+                    </p>
+                    <p class="text-sm mt-2">📍 R. Boaventura do Amaral, 405 - Bosque, Campinas - SP, 13026-050</p>
+                    <p class="text-xs mt-4">© 2025 - Guia Essencial de Cuidados com a Pele</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
