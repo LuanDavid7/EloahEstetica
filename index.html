@@ -154,6 +154,13 @@
             display: inline-block;
             margin-top: 10px;
             font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .export-btn {
@@ -168,6 +175,92 @@
             cursor: pointer;
             border: none;
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .export-btn:hover {
+            background-color: #b34a70;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #f8e1eb 100%);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #f0d3e0;
+        }
+
+        .promo-title {
+            font-family: 'Playfair Display', serif;
+            color: #d45d87;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .promo-price {
+            font-weight: 600;
+            color: #5d9d88;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .promo-old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .promo-highlight {
+            background-color: #f8e1eb;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .promo-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .promo-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+
+        .promo-list li:before {
+            content: "•";
+            color: #d45d87;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         @media (min-width: 768px) {
@@ -186,6 +279,12 @@
             h2 {
                 font-size: 1.8rem;
             }
+
+            .promo-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -203,6 +302,71 @@
             <div class="px-4 py-4">
                 <h1 class="text-3xl font-bold text-center mb-2">Descubra Sua Pele</h1>
                 <p class="text-center text-lg mb-6">Guia Essencial de Cuidados Diários</p>
+                
+                <!-- Seção de Vídeo -->
+                <div class="section">
+                    <h2 class="text-xl font-semibold">Dicas extras para você, escolhida!</h2>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Tdlvc0wxSVw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center mt-2">Assista ao vídeo para conhecer mais algumas dicas de como ficar ainda mais radiante.</p>
+                </div>
+                
+                <!-- Seção de Promoções Especiais -->
+                <div class="section">
+                    <h2 class="text-xl font-semibold">Promoções Especiais</h2>
+                    <p class="text-center mb-6">Aproveite nossas condições imperdíveis para cuidar da sua pele!</p>
+                    
+                    <div class="promo-grid">
+                        <!-- Promoção 1 -->
+                        <div class="promo-card">
+                            <h3 class="promo-title">Drenagem MAPE</h3>
+                            <p class="text-center">Tratamento completo para redução de medidas e melhora da circulação</p>
+                            
+                            <div class="text-center mt-4">
+                                <p class="promo-price">Sessão Avulsa: R$180,00</p>
+                                <p class="promo-highlight">Pacote com 10 sessões</p>
+                                <p><span class="promo-old-price">De: R$1.250,00</span></p>
+                                <p class="promo-price">Por: R$997,00</p>
+                                <p>Cada sessão sai por R$99,70</p>
+                            
+                                <p class="promo-highlight mt-4">OU</p>
+                                <p>Pacote com 5 sessões</p>
+                                <p class="promo-price">R$600,00</p>
+                                <p class="promo-highlight">No Pix: R$500,00</p>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="https://wa.me/5519994046889?text=Olá! Gostaria de agendar o Pacote de Drenagem MAPE que vi no site." class="whatsapp-btn">Eu quero!</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Promoção 2 -->
+                        <div class="promo-card">
+                            <h3 class="promo-title">Especial Dia das Mães</h3>
+                            <p class="text-center">A limpeza de pele mais completa com condições imperdíveis!</p>
+                            
+                            <p class="text-center mt-2">90 minutos dedicados a realçar sua beleza:</p>
+                            <ul class="promo-list">
+                                <li>Limpeza de pele profunda MAPE</li>
+                                <li>Bioestimulador de Colágeno</li>
+                                <li>Máscara de Ouro 24k</li>
+                            </ul>
+                            
+                            <div class="text-center">
+                                <p>Pele hidratada e nutrida para presentear quem você ama!</p>
+                                <p class="mt-2"><span class="promo-old-price">De: R$220,00</span></p>
+                                <p class="promo-price">Por: R$150,00 no Pix</p>
+                                <p>ou R$160,00 no cartão</p>
+                                <p class="promo-highlight mt-2">Válido apenas no mês de Maio</p>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="https://wa.me/5519994046889?text=Olá! Gostaria de agendar o Especial Dia das Mães - Limpeza de Pele que vi no site." class="whatsapp-btn">Eu quero!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Seção 1: Descubra o Seu Tipo de Pele -->
