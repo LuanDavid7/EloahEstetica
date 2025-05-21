@@ -1,481 +1,1655 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra Sua Pele: Guia Essencial de Cuidados</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <meta name="description" content="Clínica Eloah Estética oferece tratamentos personalizados para realçar sua beleza natural. Agende sua avaliação gratuita hoje!">
+    <meta name="keywords" content="clínica estética, tratamentos de beleza, drenagem linfática, estética personalizada, São Paulo">
+    <meta name="author" content="Clínica Eloah Estética">
+    <title>Clínica Eloah Estética - Transforme Sua Beleza</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-X');
+    </script>
+    
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fff;
-            color: #4a4a4a;
-            line-height: 1.5;
+        :root {
+            --primary-color: #5d4954;
+            --secondary-color: #9a7b7b;
+            --accent-color: #c8a797;
+            --light-color: #f5f0e8;
+            --dark-color: #3a2e32;
+            --text-color: #333333;
+            --text-light: #777777;
+        }
+        
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        .flyer-container {
-            background: linear-gradient(to bottom, #f8e1eb 0%, #f8f9fa 100%);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            overflow: hidden;
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
         
-        h1 {
-            font-family: 'Playfair Display', serif;
-            color: #d45d87;
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
         }
         
-        h2 {
-            font-family: 'Playfair Display', serif;
-            color: #5d9d88;
-            border-bottom: 2px solid #f0d3e0;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .section {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        
-        .skin-type {
-            background-color: rgba(246, 229, 236, 0.7);
-            border-left: 3px solid #d45d87;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .product-recommendation {
-            background-color: rgba(232, 245, 240, 0.7);
-            border-left: 3px solid #5d9d88;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .massage-step {
-            background-color: rgba(255, 248, 240, 0.7);
-            border-left: 3px solid #e9a668;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 0 4px 4px 0;
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
             display: flex;
             align-items: center;
         }
         
-        .massage-step span {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            text-align: center;
-            background-color: #e9a668;
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 35px;
+        }
+        
+        nav ul li a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--dark-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            bottom: -6px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 26px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(61, 47, 52, 0.75), rgba(61, 47, 52, 0.75)), 
+                        url('Assets/Images/capa_site.png') 
+                        no-repeat center center/cover;
             color: white;
-            border-radius: 50%;
-            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 25px;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 35px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-color);
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            margin-left: 20px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #25D366;
+            margin-top: 10px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: transparent;
+            color: #25D366;
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 120px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 40px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 17px;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .service-content ul {
+            list-style: none;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .service-content ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .service-content ul li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        .service-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .promotions {
+            background: linear-gradient(rgba(93, 73, 84, 0.9), rgba(93, 73, 84, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519735777090-ec97162dc266?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') 
+                        no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .promotions .section-title h2 {
+            color: white;
+        }
+        
+        .promotions .section-title h2::after {
+            background: var(--accent-color);
+        }
+        
+        .promo-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .promo-card h3 {
+            font-size: 32px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        
+        .promo-card p {
+            color: var(--text-color);
+            margin-bottom: 35px;
+            font-size: 18px;
+        }
+        
+        .promo-highlight {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 25px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 35px 0;
+        }
+        
+        .countdown-item {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .countdown-item span {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 8px;
+        }
+        
+        .laser-day {
+            background-color: white;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 40px;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .price-table th, .price-table td {
+            padding: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .price-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .price-table tr:nth-child(even) {
+            background-color: var(--light-color);
+        }
+        
+        .price-table tr:hover {
+            background-color: rgba(200, 167, 151, 0.1);
+        }
+        
+        .price-table .btn-whatsapp {
+            padding: 10px 20px;
             font-size: 14px;
         }
         
-        .footer {
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            margin-top: 20px;
-            padding: 15px;
+        .testimonials {
+            background-color: var(--light-color);
         }
         
-        .highlight {
-            color: #d45d87;
-            font-weight: 500;
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
-
-        .main-image-container {
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 17px;
             position: relative;
-            max-height: 400px;
+        }
+        
+        .testimonial-text::before {
+            content: '"';
+            font-size: 70px;
+            color: var(--accent-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -25px;
+            left: -15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             overflow: hidden;
+            margin-right: 20px;
         }
-
-        .main-image {
-            width: 100%;
-            height: auto;
-            opacity: 0.25;
-            border-radius: 8px 8px 0 0;
-            object-fit: cover;
-        }
-
-        .logo-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 100%;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: #d45d87;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin: 0;
-        }
-
-        .section-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .export-btn {
-            background-color: #d45d87;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 15px auto;
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .export-btn:hover {
-            background-color: #b34a70;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .promo-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #f8e1eb 100%);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 1px solid #f0d3e0;
-        }
-
-        .promo-title {
-            font-family: 'Playfair Display', serif;
-            color: #d45d87;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .promo-price {
-            font-weight: 600;
-            color: #5d9d88;
-            font-size: 1.2rem;
-            margin: 10px 0;
-        }
-
-        .promo-old-price {
-            text-decoration: line-through;
-            color: #888;
-            font-size: 1rem;
-        }
-
-        .promo-highlight {
-            background-color: #f8e1eb;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: 500;
-            display: inline-block;
-            margin: 5px 0;
-        }
-
-        .promo-list {
-            list-style-type: none;
-            padding-left: 0;
-            margin: 15px 0;
-        }
-
-        .promo-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 8px;
-        }
-
-        .promo-list li:before {
-            content: "•";
-            color: #d45d87;
-            font-size: 1.5rem;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        
+        .author-image img {
             width: 100%;
             height: 100%;
-            border: none;
+            object-fit: cover;
         }
-
-        @media (min-width: 768px) {
+        
+        .author-info h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .author-info p {
+            font-size: 15px;
+            color: var(--text-light);
+        }
+        
+        .transformations {
+            background-color: white;
+        }
+        
+        /* Estilização do Swiper */
+        .gallery-swiper {
+            position: relative;
+            padding: 20px 0;
+            overflow: hidden;
+        }
+        
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 320px;
+            width: 100%;
+            max-width: 280px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            color: white;
+            padding: 25px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-overlay p {
+            font-size: 15px;
+        }
+        
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        
+        .swiper-button-prev:hover,
+        .swiper-button-next:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+            font-size: 20px;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: var(--text-light);
+            opacity: 0.5;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background-color: var(--accent-color);
+            opacity: 1;
+        }
+        
+        .contact {
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 35px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            color: var(--accent-color);
+            font-size: 22px;
+            margin-right: 20px;
+            margin-top: 4px;
+        }
+        
+        .contact-text h4 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .contact-text p, .contact-text a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .contact-text a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Raleway', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 5px rgba(200, 167, 151, 0.3);
+        }
+        
+        textarea.form-control {
+            min-height: 140px;
+            resize: vertical;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .footer-col p, .footer-col a {
+            color: #b3b3b3;
+            margin-bottom: 15px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 16px;
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b3b3b3;
+            font-size: 15px;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        .lead-capture {
+            position: fixed;
+            bottom: -350px;
+            right: 30px;
+            width: 380px;
+            background-color: white;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 99;
+            transition: bottom 0.5s ease;
+        }
+        
+        .lead-capture.active {
+            bottom: 0;
+        }
+        
+        .lead-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .lead-header h4 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 20px;
+        }
+        
+        .lead-header i {
+            transition: transform 0.3s ease;
+        }
+        
+        .lead-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .lead-body {
+            padding: 25px;
+        }
+        
+        .lead-body p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .btn, .btn-whatsapp {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: left 0.3s ease;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 20px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .lead-capture {
+                width: 320px;
+                right: 15px;
+            }
+            
+            .price-table th, .price-table td {
+                font-size: 14px;
+                padding: 10px;
+            }
+            
+            .gallery-item {
+                max-width: 250px;
+            }
+            
+            .gallery-swiper {
+                padding: 10px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
             .section {
-                padding: 20px;
+                padding: 80px 0;
             }
             
-            .logo-text {
-                font-size: 4rem;
+            .section-title h2 {
+                font-size: 32px;
             }
             
-            h1 {
-                font-size: 2.5rem;
+            .promo-card {
+                padding: 40px 25px;
             }
             
-            h2 {
-                font-size: 1.8rem;
+            .promo-highlight {
+                font-size: 36px;
             }
-
-            .promo-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 20px;
+            
+            .countdown {
+                flex-wrap: wrap;
+            }
+            
+            .lead-capture {
+                width: calc(100% - 30px);
+            }
+            
+            .price-table {
+                font-size: 13px;
+            }
+            
+            .price-table th, .price-table td {
+                padding: 8px;
+            }
+            
+            .price-table .btn-whatsapp {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            
+            .gallery-item {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="flyer-container pb-4">
-            <!-- Header com imagem principal com transparência e logo sobreposta -->
-            <div class="main-image-container">
-                <img src="https://img.freepik.com/fotos-gratis/beleza-de-cuidados-com-a-pele-menina-natural-com-pele-saudavel-e-brilhante-tocando-o-rosto-hidratado-e-sorrindo-com-os-olhos-fechados-mulher-desfrutando-de-uma-sensacao-de-frescura-e-limpeza-depois-de-cosmeticos-parede-branca_176420-34261.jpg" alt="Mulher com pele saudável" class="main-image">
-                <div class="logo-overlay">
-                    <h1 class="logo-text">Eloáh Estética</h1>
-                </div>
-            </div>
-            
-            <div class="px-4 py-4">
-                <h1 class="text-3xl font-bold text-center mb-2">Descubra Sua Pele</h1>
-                <p class="text-center text-lg mb-6">Guia Essencial de Cuidados Diários</p>
-                
-                <!-- Seção de Vídeo -->
-                <div class="section">
-                    <h2 class="text-xl font-semibold">Dicas extras para você, escolhida!</h2>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/Tdlvc0wxSVw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <p class="text-center mt-2">Assista ao vídeo para conhecer mais algumas dicas de como ficar ainda mais radiante.</p>
-                </div>
-                
-                <!-- Seção de Promoções Especiais -->
-                <div class="section">
-                    <h2 class="text-xl font-semibold">Promoções Especiais</h2>
-                    <p class="text-center mb-6">Aproveite nossas condições imperdíveis para cuidar da sua pele!</p>
-                    
-                    <div class="promo-grid">
-                        <!-- Promoção 1 -->
-                        <div class="promo-card">
-                            <h3 class="promo-title">Drenagem MAPE</h3>
-                            <p class="text-center">Tratamento completo para redução de medidas e melhora da circulação</p>
-                            
-                            <div class="text-center mt-4">
-                                <p class="promo-price">Sessão Avulsa: R$180,00</p>
-                                <p class="promo-highlight">Pacote com 10 sessões</p>
-                                <p><span class="promo-old-price">De: R$1.250,00</span></p>
-                                <p class="promo-price">Por: R$997,00</p>
-                                <p>Cada sessão sai por R$99,70</p>
-                            
-                                <p class="promo-highlight mt-4">OU</p>
-                                <p>Pacote com 5 sessões</p>
-                                <p class="promo-price">R$600,00</p>
-                                <p class="promo-highlight">No Pix: R$500,00</p>
-                            </div>
-                            
-                            <div class="text-center mt-4">
-                                <a href="https://wa.me/5519994046889?text=Olá! Gostaria de agendar o Pacote de Drenagem MAPE que vi no site." class="whatsapp-btn">Eu quero!</a>
-                            </div>
-                        </div>
-                        
-                        <!-- Promoção 2 -->
-                        <div class="promo-card">
-                            <h3 class="promo-title">Especial Dia das Mães</h3>
-                            <p class="text-center">A limpeza de pele mais completa com condições imperdíveis!</p>
-                            
-                            <p class="text-center mt-2">90 minutos dedicados a realçar sua beleza:</p>
-                            <ul class="promo-list">
-                                <li>Limpeza de pele profunda MAPE</li>
-                                <li>Bioestimulador de Colágeno</li>
-                                <li>Máscara de Ouro 24k</li>
-                            </ul>
-                            
-                            <div class="text-center">
-                                <p>Pele hidratada e nutrida para presentear quem você ama!</p>
-                                <p class="mt-2"><span class="promo-old-price">De: R$220,00</span></p>
-                                <p class="promo-price">Por: R$150,00 no Pix</p>
-                                <p>ou R$160,00 no cartão</p>
-                                <p class="promo-highlight mt-2">Válido apenas no mês de Maio</p>
-                            </div>
-                            
-                            <div class="text-center mt-4">
-                                <a href="https://wa.me/5519994046889?text=Olá! Gostaria de agendar o Especial Dia das Mães - Limpeza de Pele que vi no site." class="whatsapp-btn">Eu quero!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Seção 1: Descubra o Seu Tipo de Pele -->
-                    <div class="section">
-                        <h2 class="text-xl font-semibold">Descubra o Seu Tipo de Pele</h2>
-                        
-                        <div class="skin-type">
-                            <p class="font-medium">Pele Seca</p>
-                            <p>Sensação de repuxamento, descamação, aspereza e pouca elasticidade. Faça o teste: após a limpeza, a pele fica repuxada e desconfortável.</p>
-                        </div>
-                        
-                        <div class="skin-type">
-                            <p class="font-medium">Pele Normal</p>
-                            <p>Equilibrada, macia, sem brilho excessivo ou ressecamento. Faça o teste: 2-3 horas após a limpeza, a pele mantém-se confortável, sem oleosidade ou repuxamento.</p>
-                        </div>
-                        
-                        <div class="skin-type">
-                            <p class="font-medium">Pele Oleosa</p>
-                            <p>Brilho excessivo, poros dilatados, tendência a acne. Faça o teste: 2 horas após a limpeza, note a oleosidade especialmente na "zona T" (testa, nariz e queixo).</p>
-                        </div>
-                        
-                        <div class="skin-type">
-                            <p class="font-medium">Pele Mista</p>
-                            <p>Combinação de áreas oleosas (zona T) e secas (bochechas). Faça o teste: após a limpeza, observe oleosidade apenas em algumas áreas do rosto.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Seção 2: Escolha os Produtos Certos -->
-                    <div class="section">
-                        <h2 class="text-xl font-semibold">Escolha os Produtos Certos</h2>
-                        
-                        <img src="https://d1xe7tfg0uwul9.cloudfront.net/sbd-portal-2024/wp-content/uploads/2021/10/palestrante.png.webp" alt="Classificação dos fototipos de pele" class="section-image">
-                        
-                        <div class="product-recommendation">
-                            <p class="font-medium">Para Pele Seca</p>
-                            <p>Busque produtos com <span class="highlight">ácido hialurônico</span>, <span class="highlight">ceramidas</span>, <span class="highlight">glicerina</span> e <span class="highlight">óleos naturais</span>. Prefira limpadores cremosos e hidratantes densos que formem barreira protetora.</p>
-                        </div>
-                        
-                        <div class="product-recommendation">
-                            <p class="font-medium">Para Pele Normal</p>
-                            <p>Produtos balanceados com <span class="highlight">antioxidantes</span>, <span class="highlight">vitamina C</span> e <span class="highlight">peptídeos</span>. Hidratantes leves a médios e limpadores suaves são ideais para manter o equilíbrio.</p>
-                        </div>
-                        
-                        <div class="product-recommendation">
-                            <p class="font-medium">Para Pele Oleosa</p>
-                            <p>Procure produtos com <span class="highlight">ácido salicílico</span>, <span class="highlight">niacinamida</span> e <span class="highlight">argilas</span>. Prefira hidratantes em gel ou sérum com especificações <span class="highlight">oil-free</span> e limpadores que controlam oleosidade.</p>
-                        </div>
-                        
-                        <div class="product-recommendation">
-                            <p class="font-medium">Para Pele Mista</p>
-                            <p>Combine produtos ou use específicos para pele mista com <span class="highlight">ácido glicólico</span> e <span class="highlight">extratos calmantes</span>. Hidratantes leves nas áreas oleosas e mais intensos nas áreas secas.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Seção 3: Massagem Facial de 5-10 minutos -->
-                <div class="section">
-                    <h2 class="text-xl font-semibold">Massagem Facial de 5-10 minutos</h2>
-                    
-                    <img src="https://www.idermo.com/media/zoo/images/Automasaje-facialpp_d9de8d2c38c626678f5646a5e45b7c67.jpg" alt="Massagem facial" class="section-image">
-                    
-                    <div class="massage-step">
-                        <span>1</span>
-                        <p>Aplique um óleo ou sérum facial e aqueça as mãos esfregando-as rapidamente.</p>
-                    </div>
-                    
-                    <div class="massage-step">
-                        <span>2</span>
-                        <p>Comece pelo queixo e maxilar: com os dedos, faça movimentos suaves para cima e para fora.</p>
-                    </div>
-                    
-                    <div class="massage-step">
-                        <span>3</span>
-                        <p>Maçãs do rosto: use movimentos circulares ascendentes do centro para as têmporas.</p>
-                    </div>
-                    
-                    <div class="massage-step">
-                        <span>4</span>
-                        <p>Testa: deslize os dedos do centro para as laterais, depois faça movimentos circulares nas têmporas.</p>
-                    </div>
-                    
-                    <div class="massage-step">
-                        <span>5</span>
-                        <p>Contorno dos olhos: toque suavemente com os dedos anelares, movendo-se do canto interno para o externo.</p>
-                    </div>
-                    
-                    <div class="massage-step">
-                        <span>6</span>
-                        <p>Finalize pressionando pontos de drenagem próximos às orelhas por 5 segundos cada.</p>
-                    </div>
-                    
-                    <p class="text-center mt-4">Realize esta massagem por 5-10 minutos diariamente, repita cada sequência de movimentos por um número de vezes igual a sua idade.</p>
-                  
-                    <p class="text-center mt-2">Fazendo isso todos os dias ocorrerá melhora da circulação, redução do inchaço e com isso uma pele mais firme e sempre radiante.</p>
-                </div>
-                
-                <!-- Footer com contato e localização -->
-                <div class="footer">
-                    <p class="text-sm">Compartilhe este guia com suas amigas!</p>
-                    <p class="text-lg font-medium mt-2">Eloáh Estética</p>
-                    <p class="text-sm">📞 (19) 994 046 689</p>
-                    <p class="mt-4">
-                        <a href="https://wa.me/5519994046889" class="whatsapp-btn">Agende pelo WhatsApp</a>
-                    </p>
-                    <p class="text-sm mt-2">📍 R. Boaventura do Amaral, 405 - Bosque, Campinas - SP, 13026-050</p>
-                    <p class="text-xs mt-4">© 2025 - Guia Essencial de Cuidados com a Pele</p>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Eloah<span>Estética</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#promotions">Promoções</a></li>
+                    <li><a href="#laser-day">Laser Day</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transforme Sua Beleza com Cuidado Personalizado</h1>
+                <p>Descubra tratamentos exclusivos na Clínica Eloah Estética que realçam sua beleza natural e renovam sua confiança.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Agende Sua Avaliação Gratuita</a>
+                    <a href="#promotions" class="btn btn-secondary">Veja Nossas Ofertas</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre mim</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Paixão por Transformação</h3>
+                    <p>Eu Eloá Cristina, trago a você mais de 20 anos de experiencia e de resultados comprovados, começando por mim. Sim é isso mesmo, toda a fundamentação da minha metodologia foi desenvolvida como um experimento que primeiramente foi aplicado em mim. Como? eu te explico, a Eloá aqui sempre teve o desejo de ter uma casa cheia e com isso vieram minhas filhas, mas junto veio aquele monte de preocupação que nós mulheres temos com o nosso corpo, foi então que desenvolvi um conjunto de técnicas que para mim funcionou perfeitamente e desde então venho aprimorando a cada atendimento, para que hoje eu possa estar aqui e te oferecer o melhor que existe da técnica MAPE, O método autentico Personalizado.</p>
+                    <p>Meu compromisso é oferecer mais do que tratamentos: além disso te entrego tudo sobre cuidados diários, alimentação e bem-estar para resultados duradouros.</p>
+                    <a href="#services" class="btn">Conheça Nossos Serviços</a>
+                </div>
+                <div class="about-image">
+                    <img src="Assets/Images/EloaCristina.png" alt="Clínica Eloah Estética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Tratamentos</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="Assets/Images/MAPE_Abdomen.png" alt="Drenagem MAPE">
+                    </div>
+                    <div class="service-content">
+                        <h3>Drenagem MAPE</h3>
+                        <ul>
+                            <li>Reduz medidas em até 5cm</li>
+                            <li>Melhora a circulação</li>
+                            <li>Resultados visíveis em 3 sessões</li>
+                        </ul>
+                        <div class="service-price">A partir de R$ 180,00</div>
+                        <a href="#contact" class="btn">Agendar Agora</a>
+                        <a href="https://wa.me/5519994046889?text=Olá! Quero agendar Drenagem MAPE" class="btn-whatsapp">Agendar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="Assets/Images/MAPE_Enzima.png" alt="MAPE com Enzima">
+                    </div>
+                    <div class="service-content">
+                        <h3>MAPE com Enzima</h3>
+                        <ul>
+                            <li>Combate gordura localizada</li>
+                            <li>Reduz celulite em 80%</li>
+                            <li>Personalizado para seu corpo</li>
+                        </ul>
+                        <div class="service-price">A partir de R$ 350,00</div>
+                        <a href="#contact" class="btn">Agendar Agora</a>
+                        <a href="https://wa.me/5519994046889?text=Olá! Quero agendar MAPE com Enzima" class="btn-whatsapp">Agendar</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="Assets/Images/Limpeza_Pele.png" alt="Limpeza de Pele">
+                    </div>
+                    <div class="service-content">
+                        <h3>Limpeza de Pele Profissional</h3>
+                        <ul>
+                            <li>Remove impurezas profundas</li>
+                            <li>Hidratação intensiva</li>
+                            <li>Pele renovada em 1 sessão</li>
+                        </ul>
+                        <div class="service-price">A partir de R$ 180,00</div>
+                        <a href="#contact" class="btn">Agendar Agora</a>
+                        <a href="https://wa.me/5519994046889?text=Olá! Quero agendar Limpeza de Pele Profissional" class="btn-whatsapp">Agendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section promotions" id="promotions">
+        <div class="container">
+            <div class="section-title">
+                <h2>Oferta Exclusiva da semana</h2>
+            </div>
+            <div class="promo-card">
+                <h3>Pacote Glow Total</h3>
+                <p>Transforme-se com nosso combo completo: corpo e pele impecáveis!</p>
+                <div class="promo-highlight">R$ 3.200,00</div>
+                <p>Inclui 8 sessões de MAPE com Enzima, 5 sessões de Pele de Ryca e mais.</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item"><span id="days">00</span><span>Dias</span></div>
+                    <div class="countdown-item"><span id="hours">00</span><span>Horas</span></div>
+                    <div class="countdown-item"><span id="minutes">00</span><span>Minutos</span></div>
+                    <div class="countdown-item"><span id="seconds">00</span><span>Segundos</span></div>
+                </div>
+                <a href="#contact" class="btn">Aproveitar Agora</a>
+                <a href="https://wa.me/5519994046889?text=Olá! Quero informações sobre o Pacote Glow Total" class="btn-whatsapp">Agendar</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section laser-day" id="laser-day">
+        <div class="container">
+            <div class="section-title">
+                <h2>Promoções do Laser Day</h2>
+            </div>
+            <div class="laser-day-content">
+                <p>Descubra nossas promoções exclusivas para depilação a laser! Escolha entre sessões avulsas ou pacotes com descontos incríveis para resultados duradouros e uma pele impecável.</p>
+                
+                <h3 style="color: var(--primary-color); font-size: 28px; margin: 40px 0 20px;">Tabela de Preços - Depilação a Laser</h3>
+                <div class="table-responsive">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Área</th>
+                                <th>Sessão Avulsa</th>
+                                <th>Pacote 6 Sessões (Desconto)</th>
+                                <th>Pacote 10 Sessões (Desconto)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Buço</td>
+                                <td>R$ 60,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Buço (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 324,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Buço (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 500,00 (↓16,6%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Buço (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Axila</td>
+                                <td>R$ 80,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Axila (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 432,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Axila (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 700,00 (↓12,5%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Axila (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Virilha Simples</td>
+                                <td>R$ 120,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Simples (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 648,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Simples (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.000,00 (↓16,6%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Simples (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Virilha Completa</td>
+                                <td>R$ 160,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Completa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 864,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Completa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.400,00 (↓12,5%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Virilha Completa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Meia Perna</td>
+                                <td>R$ 200,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Meia Perna (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.080,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Meia Perna (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.800,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Meia Perna (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Coxa</td>
+                                <td>R$ 250,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Coxa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.350,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Coxa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.200,00 (↓12%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Coxa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Perna Inteira</td>
+                                <td>R$ 400,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Perna Inteira (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.160,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Perna Inteira (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.500,00 (↓12,5%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Perna Inteira (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Peito</td>
+                                <td>R$ 150,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Peito (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 810,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Peito (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.300,00 (↓13,3%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Peito (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Barriga</td>
+                                <td>R$ 150,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barriga (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 810,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barriga (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.300,00 (↓13,3%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barriga (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Costas</td>
+                                <td>R$ 300,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Costas (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.620,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Costas (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.600,00 (↓13,3%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Costas (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Barba</td>
+                                <td>R$ 150,00<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barba (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 810,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barba (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.300,00 (↓13,3%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Barba (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 style="color: var(--primary-color); font-size: 28px; margin: 40px 0 20px;">Tabela de Combos Promocionais</h3>
+                <div class="table-responsive">
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Combo</th>
+                                <th>Avulso (1 Sessão)</th>
+                                <th>Pacote 6 Sessões (Desconto)</th>
+                                <th>Pacote 10 Sessões (Desconto)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Axila + Virilha Simples</td>
+                                <td>R$ 180,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Simples (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 972,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Simples (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.500,00 (↓25%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Simples (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Axila + Virilha Completa</td>
+                                <td>R$ 216,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.296,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.900,00 (↓20%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Meia Perna + Coxa</td>
+                                <td>R$ 405,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Meia Perna + Coxa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.430,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Meia Perna + Coxa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.600,00 (↓20%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Meia Perna + Coxa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Perna Inteira + Virilha CO</td>
+                                <td>R$ 504,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Virilha Completa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.024,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Virilha Completa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 4.200,00 (↓25%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Virilha Completa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Peito + Barriga</td>
+                                <td>R$ 270,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Peito + Barriga (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 1.620,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Peito + Barriga (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.300,00 (↓15%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Peito + Barriga (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Costas + Barba</td>
+                                <td>R$ 405,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Costas + Barba (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.430,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Costas + Barba (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.200,00 (↓20%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Costas + Barba (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Axila + Virilha CO + Meia Perna</td>
+                                <td>R$ 440,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa + Meia Perna (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 2.640,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa + Meia Perna (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.700,00 (↓20%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Axila + Virilha Completa + Meia Perna (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Perna Inteira + Axila + Virilha CO</td>
+                                <td>R$ 540,00 (↓15%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Axila + Virilha Completa (Sessão Avulsa)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 3.240,00 (↓10%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Axila + Virilha Completa (Pacote 6 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                                <td>R$ 4.900,00 (↓25%)<br><a href="https://wa.me/5519994046889?text=Olá! Quero agendar Depilação a Laser - Combo Perna Inteira + Axila + Virilha Completa (Pacote 10 Sessões)" class="btn-whatsapp">Agendar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#contact" class="btn">Agendar Sua Sessão de Laser</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Nossas Clientes Dizem</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Perdi 8cm de cintura com o MAPE e minha autoestima está nas alturas!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="Assets/Images/Comentario1.png" alt="Ana Carolina">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana Carolina</h4>
+                            <p>Cliente há 1 ano</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"O Glúteo Max deu um up incrível no meu corpo em apenas 8 sessões!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="Assets/Images/Comentario2.png" alt="Juliana">
+                        </div>
+                        <div class="author-info">
+                            <h4>Juliana Santos</h4>
+                            <p>Cliente há 6 meses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section transformations" id="transformations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resultados Reais</h2>
+            </div>
+            <div class="swiper-container gallery-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/Resultado_Mape_1.png" alt="Antes e Depois 1">
+                            <div class="gallery-overlay">
+                                <h4>Redução de Medidas</h4>
+                                <p>12 sessões de MAPE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/Resultado_Mape_2.png" alt="Antes e Depois 2">
+                            <div class="gallery-overlay">
+                                <h4>Resultado da Cláudia</h4>
+                                <p>12 sessões de MAPE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/Resultado_Mape_3.png" alt="Antes e Depois 3">
+                            <div class="gallery-overlay">
+                                <h4>Resultado da Maria</h4>
+                                <p>3 sessões de MAPE com enzima</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/Resultado_MAPE_4.png" alt="Antes e Depois 4">
+                            <div class="gallery-overlay">
+                                <h4>Resultado da Jéssica</h4>
+                                <p>Mape 10 sessões</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/SemMelasma.png" alt="Antes e Depois 4">
+                            <div class="gallery-overlay">
+                                <h4>Pele sem manchas da Dani</h4>
+                                <p>Pele de Ryca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/LipoPapada.png" alt="Antes e Depois 4">
+                            <div class="gallery-overlay">
+                                <h4>O glow facial da Beth</h4>
+                                <p>Lipo de papada</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gallery-item">
+                            <img src="Assets/Images/SemPapada1.png" alt="Antes e Depois 4">
+                            <div class="gallery-overlay">
+                                <h4>Pele hidratada da Aline</h4>
+                                <p>Pele de Ryca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fale Conosco</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Entre em Contato</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Endereço</h4>
+                                <p>R. Boaventura do Amaral, 405 - Bosque, Campinas - SP</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Telefone</h4>
+                                <a href="tel:+5519994046889">(19) 994 046 889</a>
+                            </div>
+                        </div>
+<!--                         
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:esteticaeloahspa@gmail.com">contato@eloahestetica.com.br</a>
+                            </div>
+                        </div>
+-->
+                    </div>
+                    <h3>Siga-nos</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/eloahestetica/"><i class="fab fa-instagram"></i></a>
+<!--                         <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                        <a href="https://wa.me/5519994046889"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" class="form-control" required aria-label="Nome Completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required aria-label="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" required aria-label="Telefone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse</label>
+                            <select id="service" class="form-control" required aria-label="Serviço de Interesse">
+                                <option value="">Selecione um serviço</option>
+                                <option value="Drenagem MAPE">Drenagem MAPE</option>
+                                <option value="MAPE com Enzima">MAPE com Enzima</option>
+                                <option value="Limpeza de Pele">Limpeza de Pele</option>
+                                <option value="Depilação a Laser">Depilação a Laser</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Agendar Avaliação Gratuita</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Eloah Estética</h3>
+                    <p>Beleza que transforma, cuidado que renova. Sua jornada de autocuidado começa aqui.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <a href="#services">Serviços</a>
+                    <a href="#promotions">Promoções</a>
+                    <a href="#laser-day">Laser Day</a>
+                    <a href="#contact">Contato</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Receba dicas de beleza e promoções exclusivas.</p>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu email" class="form-control" required aria-label="Email para Newsletter">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Assinar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Clínica Eloah Estética. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5519994046889?text=Olá! Quero agendar minha avaliação gratuita." class="whatsapp-float" aria-label="Contato via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+    </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.getAttribute('href') === '#') return;
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    if (mainMenu.classList.contains('active')) {
+                        mainMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        function updateCountdown() {
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 7);
+            const now = new Date().getTime();
+            const distance = endDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item">Oferta Encerrada!</div>';
+            }
+        }
+        
+        const countdownTimer = setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        const leadHeader = document.getElementById('leadHeader');
+        const leadCapture = document.getElementById('leadCapture');
+        
+        if (leadHeader && leadCapture) {
+            leadHeader.addEventListener('click', () => {
+                leadCapture.classList.toggle('active');
+                leadHeader.classList.toggle('active');
+            });
+        
+            setTimeout(() => {
+                leadCapture.classList.add('active');
+            }, 3000);
+        }
+        
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Agendamento solicitado com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        const leadForm = document.getElementById('leadForm');
+        if (leadForm) {
+            leadForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Parabéns! Seu cupom de 10% de desconto foi enviado para seu email.');
+                this.reset();
+                leadCapture.classList.remove('active');
+            });
+        }
+        
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por assinar nossa newsletter!');
+            this.reset();
+        });
+        
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            slidesPerView: 2,
+            spaceBetween: 25,
+            slidesPerGroup: 1,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    </script>
 </body>
 </html>
