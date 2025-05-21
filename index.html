@@ -1365,7 +1365,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-item">
-                            <img src="Assets/Images/SemMelasma.png" alt="Antes e Depois 4">
+                            <img src="Assets/Images/SemMelasma.png" alt="Antes e Depois 5">
                             <div class="gallery-overlay">
                                 <h4>Pele sem manchas da Dani</h4>
                                 <p>Pele de Ryca</p>
@@ -1374,7 +1374,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-item">
-                            <img src="Assets/Images/LipoPapada.png" alt="Antes e Depois 4">
+                            <img src="Assets/Images/LipoPapada.png" alt="Antes e Depois 6">
                             <div class="gallery-overlay">
                                 <h4>O glow facial da Beth</h4>
                                 <p>Lipo de papada</p>
@@ -1383,7 +1383,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="gallery-item">
-                            <img src="Assets/Images/SemPapada1.png" alt="Antes e Depois 4">
+                            <img src="Assets/Images/SemPapada1.png" alt="Antes e Depois 7">
                             <div class="gallery-overlay">
                                 <h4>Pele hidratada da Aline</h4>
                                 <p>Pele de Ryca</p>
@@ -1408,7 +1408,7 @@
                     <h3>Entre em Contato</h3>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></divені
                             <div class="contact-text">
                                 <h4>Endereço</h4>
                                 <p>R. Boaventura do Amaral, 405 - Bosque, Campinas - SP</p>
@@ -1421,20 +1421,10 @@
                                 <a href="tel:+5519994046889">(19) 994 046 889</a>
                             </div>
                         </div>
-<!--                         
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <a href="mailto:esteticaeloahspa@gmail.com">contato@eloahestetica.com.br</a>
-                            </div>
-                        </div>
--->
                     </div>
                     <h3>Siga-nos</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/eloahestetica/"><i class="fab fa-instagram"></i></a>
-<!--                         <a href="#"><i class="fab fa-facebook-f"></i></a> -->
                         <a href="https://wa.me/5519994046889"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1606,7 +1596,27 @@
         
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Agendamento solicitado com sucesso! Entraremos em contato em breve.');
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            
+            if (!name || !email || !phone || !service) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+            
+            const message = `Olá! Gostaria de agendar uma avaliação gratuita.%0A%0A` +
+                            `Nome: ${encodeURIComponent(name)}%0A` +
+                            `Email: ${encodeURIComponent(email)}%0A` +
+                            `Telefone: ${encodeURIComponent(phone)}%0A` +
+                            `Serviço: ${encodeURIComponent(service)}`;
+            
+            const whatsappUrl = `https://wa.me/5519994046889?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+            
             this.reset();
         });
         
@@ -1627,8 +1637,8 @@
         });
         
         const gallerySwiper = new Swiper('.gallery-swiper', {
-            slidesPerView: 2,
-            spaceBetween: 25,
+            slidesPerView: 1,
+            spaceBetween: 10,
             slidesPerGroup: 1,
             loop: true,
             navigation: {
@@ -1641,12 +1651,12 @@
             },
             breakpoints: {
                 576: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                },
-                768: {
                     slidesPerView: 2,
                     spaceBetween: 20,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 25,
                 },
             },
         });
