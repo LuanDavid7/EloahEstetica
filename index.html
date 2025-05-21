@@ -30,6 +30,7 @@
             --dark-color: #3a2e32;
             --text-color: #333333;
             --text-light: #777777;
+            --header-height: 80px; /* Valor inicial, será ajustado via JS */
         }
         
         * {
@@ -144,7 +145,7 @@
             display: flex;
             align-items: center;
             text-align: center;
-            padding-top: 80px;
+            padding-top: var(--header-height);
         }
         
         .hero-content {
@@ -541,7 +542,6 @@
             background-color: white;
         }
         
-        /* Estilização do Swiper */
         .gallery-swiper {
             position: relative;
             padding: 20px 0;
@@ -903,10 +903,10 @@
             
             nav ul {
                 position: fixed;
-                top: 80px;
+                top: var(--header-height);
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: calc(100vh - var(--header-height));
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
@@ -1408,7 +1408,7 @@
                     <h3>Entre em Contato</h3>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></divені
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-text">
                                 <h4>Endereço</h4>
                                 <p>R. Boaventura do Amaral, 405 - Bosque, Campinas - SP</p>
@@ -1495,40 +1495,17 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-    </script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        function setHeaderHeight() {
+            const header = document.querySelector('header');
+            const headerHeight = header.offsetHeight;
+            document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+        }
+
+        setHeaderHeight();
+        window.addEventListener('resize', setHeaderHeight);
+
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainMenu = document.getElementById('mainMenu');
         
@@ -1542,12 +1519,22 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 if (this.getAttribute('href') === '#') return;
-                const target = document.querySelector(this.getAttribute('href'));
+
+                let target;
+                if (this.getAttribute('href') === '#contact') {
+                    target = document.querySelector('.contact-form');
+                } else {
+                    target = document.querySelector(this.getAttribute('href'));
+                }
+
                 if (target) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header.offsetHeight;
                     window.scrollTo({
-                        top: target.offsetTop - 80,
+                        top: target.offsetTop - headerHeight,
                         behavior: 'smooth'
                     });
+
                     if (mainMenu.classList.contains('active')) {
                         mainMenu.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
@@ -1580,20 +1567,6 @@
         const countdownTimer = setInterval(updateCountdown, 1000);
         updateCountdown();
         
-        const leadHeader = document.getElementById('leadHeader');
-        const leadCapture = document.getElementById('leadCapture');
-        
-        if (leadHeader && leadCapture) {
-            leadHeader.addEventListener('click', () => {
-                leadCapture.classList.toggle('active');
-                leadHeader.classList.toggle('active');
-            });
-        
-            setTimeout(() => {
-                leadCapture.classList.add('active');
-            }, 3000);
-        }
-        
         document.getElementById('appointmentForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1620,16 +1593,6 @@
             this.reset();
         });
         
-        const leadForm = document.getElementById('leadForm');
-        if (leadForm) {
-            leadForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Parabéns! Seu cupom de 10% de desconto foi enviado para seu email.');
-                this.reset();
-                leadCapture.classList.remove('active');
-            });
-        }
-        
         document.getElementById('newsletterForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Obrigado por assinar nossa newsletter!');
@@ -1637,8 +1600,8 @@
         });
         
         const gallerySwiper = new Swiper('.gallery-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 10,
+            slidesPerView: 2,
+            spaceBetween: 20,
             slidesPerGroup: 1,
             loop: true,
             navigation: {
@@ -1650,13 +1613,13 @@
                 clickable: true,
             },
             breakpoints: {
-                576: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                },
+                768: {
                     slidesPerView: 2,
                     spaceBetween: 20,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 25,
                 },
             },
         });
